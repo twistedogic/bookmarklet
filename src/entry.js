@@ -1,5 +1,4 @@
 const path = require("path");
-const fs = require("fs");
 
 const bookmarkletDir = path.resolve(__dirname, "bookmarklet");
 
@@ -13,15 +12,4 @@ const entry = bookmarklets.reduce(
   {}
 );
 
-const content = bookmarklets.map(name => {
-  const script = fs.readFileSync(
-    path.resolve(__dirname, "..", "dist", `${name}.js`),
-    "utf8"
-  );
-  return {
-    name,
-    href: `javascript:${script}`
-  };
-});
-
-module.exports = { bookmarklets, entry, content };
+module.exports = { bookmarklets, entry };

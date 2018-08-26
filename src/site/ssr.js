@@ -4,7 +4,16 @@ import fs from "fs";
 import { renderToStaticMarkup } from "react-dom/server";
 import { extractCritical } from "emotion-server";
 import App from "./component/App";
-import { content } from "../entry";
+import { bookmarklets } from "../entry";
+
+const content = bookmarklets.map(name => {
+  const filePath = path.resolve(__dirname, "..", "..", "dist", `${name}.js`);
+  const script = fs.readFileSync(filePath, "utf8")
+  return {
+    name,
+    href: `javascript:${script}`
+  };
+});
 
 const template = ({ html, css }) => `
   <!DOCTYPE html>

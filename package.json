@@ -12,7 +12,7 @@
     "format": "prettier --write '**/*.js' '*.js'",
     "bundle:bookmarklet": "PROD=true wp --config ./webpack.bookmarklet.config.js",
     "build:ssr": "babel-node ./src/site/ssr.js",
-    "prebuild": "shx rm -r dist || true",
+    "prebuild": "shx rm -r dist public || true",
     "build": "npm run bundle:bookmarklet && npm run build:ssr",
     "precommit": "npm run lint && npm run test",
     "publish": "gh-pages -d public",

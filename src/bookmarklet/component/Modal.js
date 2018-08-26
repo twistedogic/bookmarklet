@@ -13,9 +13,7 @@ const Container = styled("div")({
   overflow: "auto",
   backgroundColor: `rgb(0,0,0,0.4)`,
   fontFamily: `"HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif`,
-  fontWeight: 300,
-  zIndex: -1,
-  position: "relative"
+  fontWeight: 300
 });
 
 const Content = styled("section")({
